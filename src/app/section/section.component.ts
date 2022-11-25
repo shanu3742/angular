@@ -32,30 +32,35 @@ export class SectionComponent {
       name: "CHECK PRINT SHIRT",
       price: 110,
       protectId: 0,
+      availability: 'availabe'
     },
     {
       imgUrl: "https://guesseu.scene7.com/is/image/GuessEU/FLGLO4FAL12-BEIBR?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0",
       name: "GLORIA HIGH LOGO SNEAKER",
       price: 91,
-      protectId: 1
+      protectId: 1,
+      availability: 'not availabe'
     },
     {
       imgUrl: "https://guesseu.scene7.com/is/image/GuessEU/HWVG6216060-TAN?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0",
       name: "CATE RIGID BAG",
       price: 94.5,
-      protectId: 2
+      protectId: 2,
+      availability: 'availabe'
     },
     {
       imgUrl: "http://guesseu.scene7.com/is/image/GuessEU/WC0001FMSWC-G5?wid=520&fmt=jpeg&qlt=80&op_sharpen=0&op_usm=1.0,1.0,5,0&iccEmbed=0",
       name: "GUESS CONNECT WATCH",
       price: 438.9,
-      protectId: 3
+      protectId: 3,
+      availability: 'availabe'
     },
     {
       imgUrl: "https://guesseu.scene7.com/is/image/GuessEU/AW6308VIS03-SAP?wid=700&amp;fmt=jpeg&amp;qlt=80&amp;op_sharpen=0&amp;op_usm=1.0,1.0,5,0&amp;iccEmbed=0",
       name: "'70s RETRO GLAM KEFIAH",
       price: 20,
-      protectId: 4
+      protectId: 4,
+      availability: 'not availabe'
     }
   ]
 

@@ -8,5 +8,6 @@ export interface Product {
   imgUrl: string,
   name: string,
   price: number
-  protectId: number
+  protectId: number,
+  availability: string
 }

@@ -41,6 +41,16 @@
       </div>
       <div class="product-button">
         <button type="button" class="btn btn-info">view product</button>
+        <button
+          type="button"
+          class="btn btn-success"
+          *ngIf="product.availability === 'availabe'; else elseBlock"
+        >
+          add item
+        </button>
+        <ng-template #elseBlock>
+          <button type="button" class="btn btn-danger">notify me</button>
+        </ng-template>
       </div>
     </div>
   </div>
