@@ -1,3 +1,116 @@
 .content-container{
 margin-top: 0%;
+width:60%;
+min-height:50%;
+background-color: rgb(49, 48, 48);
+border-radius: 10px;
+position: relative;
+transition: 1s ease-in-out;
+}
+.cross-icon{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background-color: rgb(58, 57, 57);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+right:2%;
+top:2%
+}
+.cross-icon:hover{
+  opacity: 0.8;
+
+}
+.cross-icon:active{
+scale: 0.8;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 24px;
+}
+.navigation-container{
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  /* position: relative; */
+}
+.angular-tut{
+  width: 100%;
+  min-height: 90vh;
+  background-color: #999999;
+}
+.add-icon{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: white;
+  background-color: rgb(58, 57, 57);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 2;
+
+}
+.add-icon:hover{
+  opacity: 0.8;
+
+}
+.add-icon:active{
+scale: 0.8;
+box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 24px;
+}
+.app-navigator{
+  position: relative;
+  margin-top: 0.1em;
+}
+.navigator-line{
+
+  width: 2px;
+  border-radius: 2px;
+  min-height: 3em;
+  max-height: 100% !important;
+  background-color: rgb(54, 54, 54);
+
+}
+.navigator-content{
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -1em;
+  margin-left: 1em;
+  border-left: 2px solid rgb(54, 54, 54);
+  min-height: 40px;
+
+}
+.navigation-title{
+  margin-left: 1em;
+}
+.page-content{
+  /* background-color: yellow; */
+  /* position: absolute; */
+  margin-left: 10em;
+  margin-top: 2em;
+}
+.product-container{
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.product-price{
+  color: rgb(236, 141, 177);
+  font-weight: bolder;
+}
+.product-button{
+  position: absolute;
+  bottom: 0%;
+  right: 1%;
 }

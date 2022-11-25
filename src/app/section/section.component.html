@@ -1,6 +1,47 @@
-<section class="content-container">
-<h1>{{onGeerting()}}</h1>
-<img [src]='source'  alt='image'/>
-<app-notification></app-notification>
-<app-search></app-search>
+<section class="content-container" [hidden]="hide">
+  <div (click)="onHideImage()" class="cross-icon">X</div>
+  <h1>{{ onGeerting() }}</h1>
+  <img [src]="source" alt="image" />
+  <app-notification></app-notification>
+  <app-search></app-search>
+</section>
+<section [hidden]="!hide" class="angular-tut">
+  <div
+    *ngFor="let navigation of navigationData; let i = index"
+    class="app-navigator"
+  >
+    <div class="navigation-container">
+      <div class="add-icon" (click)="onButtonPressed(i)">+</div>
+      <div class="navigation-title">{{ navigation }}</div>
+    </div>
+    <div class="navigator-content">
+      <!-- <div class="navigator-line"></div> -->
+      <div [hidden]="i + 1 == itemnumber ? false : true" class="page-content">
+        <h5>Two way data binding</h5>
+        <app-controllesearch></app-controllesearch>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div>Directive *ngFor overview</div>
+
+    <div *ngFor="let product of products" class="product-container">
+      <div>
+        <img
+          alt="product img"
+          [src]="product?.imgUrl"
+          width="100px"
+          height="100px"
+        />
+      </div>
+      <div class="m-l">
+        <h5>{{ product?.name }}</h5>
+        <p class="product-price">{{ product?.price }}</p>
+      </div>
+      <div class="product-button">
+        <button type="button" class="btn btn-info">view product</button>
+      </div>
+    </div>
+  </div>
 </section>

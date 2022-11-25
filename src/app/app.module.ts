@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SectionComponent } from './section/section.component';
 import { NotificationComponent } from './notification/notification.component';
 import { SearchComponent } from './search/search.component';
+import { ControllesearchComponent } from './controllesearch/controllesearch.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { SearchComponent } from './search/search.component';
     FooterComponent,
     SectionComponent,
     NotificationComponent,
-    SearchComponent
+    SearchComponent,
+    ControllesearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

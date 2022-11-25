@@ -3,3 +3,10 @@ export interface hero {
   name: string
 
 }
+export interface Product {
+
+  imgUrl: string,
+  name: string,
+  price: number
+  protectId: number
+}
