@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./controllesearch.component.css']
 })
 export class ControllesearchComponent {
-  searchinput: string = 'shanu'
+  searchinput: string = ''
 
 }

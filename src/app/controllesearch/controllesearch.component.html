@@ -1,4 +1,4 @@
 <div>
   <input [(ngModel)]="searchinput" />
-  <div>search word:{{searchinput}}</div>
+  <span *ngIf="searchinput != ''">search word:{{ searchinput }}</span>
 </div>
