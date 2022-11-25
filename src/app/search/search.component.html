@@ -1,0 +1,14 @@
+<div>
+
+  <input (input)="onInputUpdate($event)" />
+  <div>searched value:{{searchValue}}</div>
+  <div  [hidden]="!hide"><button (click)="onView()">view all hero</button></div>
+  <div [hidden]="hide"><ul>
+    <li  *ngFor="let hero of heroes; let i = index;"
+        >
+      {{hero.id}}. {{ hero.name}}
+    </li>
+  </ul>
+  <button (click)="onHide()">hide heroes</button>
+</div>
+</div>
