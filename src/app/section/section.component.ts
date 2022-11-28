@@ -7,7 +7,7 @@ import { Product } from '../search/hero';
   styleUrls: ['./section.component.css']
 })
 export class SectionComponent {
-  hide: boolean = false
+  hide: boolean = true;
 
   onGeerting(): string {
     return 'hello Agent'

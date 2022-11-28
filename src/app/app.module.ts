@@ -11,6 +11,8 @@ import { NotificationComponent } from './notification/notification.component';
 import { SearchComponent } from './search/search.component';
 import { ControllesearchComponent } from './controllesearch/controllesearch.component';
 import { FormsModule } from '@angular/forms';
+import { SimpleGraphComponent } from './simple-graph/simple-graph.component';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { FormsModule } from '@angular/forms';
     SectionComponent,
     NotificationComponent,
     SearchComponent,
-    ControllesearchComponent
+    ControllesearchComponent,
+    SimpleGraphComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
