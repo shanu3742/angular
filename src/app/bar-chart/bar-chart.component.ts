@@ -48,7 +48,7 @@ export class BarChartComponent {
   }
   ]
   value = this.data.map((el) => el.value)
-  threshold = (this.value.reduce((a, b) => a + b)) / this.value.length
+  threshold: number = (this.value.reduce((a, b) => a + b)) / this.value.length
 
 
 
@@ -60,9 +60,69 @@ export class BarChartComponent {
   median = (this.min + this.max) / this.value.length
 
 
+  onIcreaseThreshold(): void {
+
+    console.log('increase button clicked')
+    this.threshold = this.threshold + 1
+
+
+    console.log(this.threshold)
+
+    this.createSvg()
+  }
+  onDecrementThreshold(): void {
+    this.threshold = this.threshold - 1
+
+
+    console.log(this.threshold)
+
+    this.createSvg()
+  }
+
+  changeThreshold(y: number) {
+
+    console.log('y at start', y)
+    let pointerData = d3.pointer(event, this.svg.node());
+
+
+    console.log(pointerData)
+    this.threshold = pointerData[1];
+
+    this.threshold = y;
+    // this.threshold = this.threshold + 0.5;
+    this.createSvg()
+  }
+  dragging(y: number) {
+    console.log(y)
+    console.log('y at dragging', y)
+    let pointerData = d3.pointer(event, this.svg.node());
+
+
+    console.log(pointerData)
+    this.threshold = pointerData[1];
+    // this.threshold = this.threshold + 0.5;
+    this.createSvg()
+  }
+
+  dragEnd(y: number) {
+    this.threshold = y;
+    // this.threshold = this.threshold + 0.5;
+    console.log('y at end', y)
+
+    let pointerData = d3.pointer(event, this.svg.node());
+
+
+    console.log(pointerData)
+    this.threshold = pointerData[1];
+    this.createSvg()
+  }
   createSvg() {
 
     console.log(`median:${this.median}`)
+
+    // d3.remo
+    d3.select('#simple-bar').select('svg').remove()
+
     this.svg = d3.select('#simple-bar').append('svg')
       .attr('width', 400)
       .attr('height', 400)
@@ -157,6 +217,8 @@ export class BarChartComponent {
      */
 
 
+
+
     this.svg.append('line')
       .attr('x1', 10)
       .attr('y1', this.threshold)
@@ -165,6 +227,8 @@ export class BarChartComponent {
       .attr('stroke', 'red')
       .attr('stroke-width', 1)
       .style('stroke-dasharray', ("3"))
+      .call(d3.drag().on('start', (d, index) => this.changeThreshold(d.y)).on('drag', (d, i) => this.dragging(d.y))
+        .on('end', (d, i) => this.dragEnd(d.y))).style('cursor', 'pointer')
 
 
 
@@ -173,6 +237,7 @@ export class BarChartComponent {
     /**
      * add circle at top with value
      */
+
 
     for (let i = 0; i < this.value.length; i++) {
       this.svg.append('circle')
@@ -234,6 +299,7 @@ export class BarChartComponent {
           'rgb(241, 157, 157)'
         )
         .attr('class', 'bottom')
+
 
 
     }
