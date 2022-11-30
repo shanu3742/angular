@@ -1,0 +1,28 @@
+
+.threshold-button{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(245, 167, 167);
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6px;
+}
+
+.button-container{
+  display: flex;
+  align-items: center;
+  /* background-color: yellow; */
+}
+.threshold-container{
+  display: flex;
+  flex-direction: row;
+  /* background-color: gray; */
+  align-items: center;
+}
+.threshold-container>h6{
+  font-size: 10px;
+}

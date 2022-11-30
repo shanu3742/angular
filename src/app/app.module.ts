@@ -12,6 +12,8 @@ import { SearchComponent } from './search/search.component';
 import { ControllesearchComponent } from './controllesearch/controllesearch.component';
 import { FormsModule } from '@angular/forms';
 import { SimpleGraphComponent } from './simple-graph/simple-graph.component';
+import { GraphDashComponent } from './graph-dash/graph-dash.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { SimpleGraphComponent } from './simple-graph/simple-graph.component';
     NotificationComponent,
     SearchComponent,
     ControllesearchComponent,
-    SimpleGraphComponent
+    SimpleGraphComponent,
+    GraphDashComponent,
+    BarChartComponent
   ],
   imports: [
     BrowserModule,
