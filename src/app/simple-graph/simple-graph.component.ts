@@ -32,7 +32,7 @@ export class SimpleGraphComponent {
       .style("stroke-width", '1px');
 
 
-    this.createRect()
+    // this.createRect()
 
     let dummyData = [
       {
@@ -79,7 +79,7 @@ export class SimpleGraphComponent {
 
 
 
-    this.createCircle()
+    // this.createCircle()
 
 
   }
@@ -88,7 +88,7 @@ export class SimpleGraphComponent {
     let circle = this.svg.append('circle');
     circle.attr('cx', 250).attr('cy', 130).attr('r', 50).attr('storke', 'orange').attr('storke-width', 10).attr('fill', 'red')
 
-    circle.append('text').attr('x', 125).attr('y', 65).attr('text-anchor', 'center').text('circle')
+    // circle.append('text').attr('x', 125).attr('y', 65).attr('text-anchor', 'center').text('circle')
 
 
   }
