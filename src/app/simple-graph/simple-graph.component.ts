@@ -52,18 +52,8 @@ export class SimpleGraphComponent {
         x: 300,
         y: 150
       },
-      {
-        x: 60,
-        y: 10
-      },
-      {
-        x: 90,
-        y: 50
-      },
-      {
-        x: 40,
-        y: 20
-      },
+
+
 
 
 

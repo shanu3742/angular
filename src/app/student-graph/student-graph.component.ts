@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import * as d3 from 'd3'
 
-interface Emp {
+export interface Emp {
 
   name: string,
   gender: 'male' | 'female',
@@ -117,7 +117,7 @@ export class StudentGraphComponent {
      */
 
 
-    this.svg.append('text').attr('x', 0).attr('y', (this.height + this.margin.top + this.margin.bottom) / 2).text('age').attr('transform', 'rotateX(45deg)')
+    this.svg.append('text').attr('x', 0).attr('y', (this.height + this.margin.top + this.margin.bottom) / 2).text('age')
     let bottomAxis = d3.axisBottom(scaleX)
     g.append('g').attr('transform', `translate(${0},${this.height})`).call(bottomAxis)
     let leftAxis = d3.axisLeft(scaleY).ticks(4);

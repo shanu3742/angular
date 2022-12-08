@@ -1,0 +1,66 @@
+<div class="app-filter-container">
+  <p>filter course</p>
+  <div class="filter-item">
+    <div>
+      <label for="all">all</label>
+      <input
+        id="all"
+        type="radio"
+        value="all"
+        [(ngModel)]="selectedBox"
+        (change)="onRadioClicked()"
+      />
+    </div>
+    <div>
+      <label for="paid">paid:{{ paid }}</label>
+      <input
+        id="paid"
+        type="radio"
+        value="PAID"
+        [(ngModel)]="selectedBox"
+        (change)="onRadioClicked()"
+      />
+    </div>
+    <div>
+      <label for="unpaid">unpaid:{{ unpaid }}</label>
+      <input
+        id="unpaid"
+        type="radio"
+        value="UNPAID"
+        [(ngModel)]="selectedBox"
+        (change)="onRadioClicked()"
+      />
+    </div>
+
+    <div>
+      <label for="free">free:{{ free }}</label>
+      <input
+        id="free"
+        type="radio"
+        value="FREE"
+        [(ngModel)]="selectedBox"
+        (change)="onRadioClicked()"
+      />
+    </div>
+    <div>
+      <label for="avaliable">avaliable:{{ avaliable }}</label>
+      <input
+        id="avaliable"
+        type="radio"
+        value="Avaliable"
+        [(ngModel)]="selectedBox"
+        (change)="onRadioClicked()"
+      />
+    </div>
+    <div>
+      <label for="notavaliable">not avaliable:{{ notAvaliable }}</label>
+      <input
+        id="notavaliable"
+        type="radio"
+        value="NotAvaliable"
+        [(ngModel)]="selectedBox"
+        (change)="onRadioClicked()"
+      />
+    </div>
+  </div>
+</div>

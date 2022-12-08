@@ -1,1 +1,67 @@
-<p>footer works!</p>
+<div class="footer-container">
+  <h6>course details</h6>
+  <app-search-course
+    (onFormSubmit)="onCourseSearch($event)"
+  ></app-search-course>
+
+  <app-filter
+    [paid]="onPaid()"
+    [unpaid]="onUnPaid()"
+    [free]="onFree()"
+    [avaliable]="getTotalAvaliableItem()"
+    [notAvaliable]="getNotTotalAvaliableItem()"
+    (onRaidioButtonChange)="onFilter($event)"
+  ></app-filter>
+
+  <div class="footer-grid g-xs g-s g-m g-l g-xl">
+    <div
+      [class]="
+        course.avaliablity === 'Avaliable'
+          ? 'grid-item course-card-avaliable'
+          : 'grid-item course-card-not-avaliable'
+      "
+      *ngFor="let course of courseItem"
+      [ngStyle]="{ 'background-image': 'url(' + course?.img + ')' }"
+    >
+      <div
+        [class]="
+          course.avaliablity === 'Avaliable'
+            ? 'course-type course-type-avaliable'
+            : 'course-type course-type-not-avaliable'
+        "
+      >
+        {{ course?.type }}
+      </div>
+      <div
+        [class]="
+          course.avaliablity === 'Avaliable'
+            ? 'course-card-footer course-card-avaliable'
+            : 'course-card-footer course-card-not-avaliable'
+        "
+      >
+        <div>
+          <h6>
+            {{ course.name }}:<b>({{ course.duriation }})</b>
+          </h6>
+          <div class="course-date-container">
+            <span class="course-date">{{ course.startAt }}</span
+            ><b>-</b>
+            <span class="course-date">{{ course.endAt }}</span>
+          </div>
+        </div>
+        <div class="course-button-container">
+          <button
+            [class]="
+              course.avaliablity === 'Avaliable'
+                ? 'avaliable-button'
+                : 'not-avaliable-button'
+            "
+            (click)="onBuy(course.avaliablity)"
+          >
+            {{ course.avaliablity === "Avaliable" ? "Avaliable" : "Notify Me" }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

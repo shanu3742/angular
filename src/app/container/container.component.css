@@ -1,7 +1,7 @@
 .wrapper{
   width:100vw;
   min-height: 100vh;
-  background-color: #999999;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

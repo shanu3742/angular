@@ -1,0 +1,9 @@
+.pie-container{
+  position: relative;
+}
+.pie-legend{
+  position: absolute;
+}
+.legend-text{
+  font-size: 1px;
+}

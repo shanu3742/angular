@@ -16,6 +16,9 @@ import { GraphDashComponent } from './graph-dash/graph-dash.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { SecondBarChartComponent } from './second-bar-chart/second-bar-chart.component';
 import { StudentGraphComponent } from './student-graph/student-graph.component';
+import { EmpDetailsComponent } from './emp-details/emp-details.component';
+import { FilterComponent } from './filter/filter.component';
+import { SearchCourseComponent } from './search-course/search-course.component';
 
 
 @NgModule({
@@ -32,7 +35,10 @@ import { StudentGraphComponent } from './student-graph/student-graph.component';
     GraphDashComponent,
     BarChartComponent,
     SecondBarChartComponent,
-    StudentGraphComponent
+    StudentGraphComponent,
+    EmpDetailsComponent,
+    FilterComponent,
+    SearchCourseComponent
   ],
   imports: [
     BrowserModule,

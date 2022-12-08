@@ -1,0 +1,148 @@
+.footer-container{
+  background-color: #ffffff;
+  min-height: 30vh;
+  width: 100vw;
+
+}
+.footer-container>h6{
+  /* background-color: orange; */
+  text-align: center;
+  font-weight: bolder;
+  text-transform: capitalize;
+  text-decoration: underline;
+  color:gray
+}
+.footer-container>.footer-grid{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+
+}
+
+.footer-container>.footer-grid>.grid-item{
+  width: 200px;
+  height:210px;
+  border-radius: 10px;
+  background-size: cover;
+  position: relative;
+}
+.course-card-footer{
+  position: absolute;
+  bottom: 0%;
+height: 40%;
+width: 100%;
+border-radius: 10px;
+background-color: #ffffff;
+}
+.course-card-avaliable{
+  border: 1px solid rgb(134, 196, 126);
+  box-shadow: rgb(134, 196, 126) 0px 4px 12px;
+}
+.course-card-not-avaliable{
+  border: 1px solid rgb(209, 117, 101);
+  box-shadow: rgb(209, 117, 101) 0px 4px 12px;
+}
+.course-type-avaliable{
+
+color:rgb(137, 223, 137);
+
+
+
+}
+.course-date{
+  font-size: 10px;
+  margin: 0%;
+  padding: 0%;
+}
+
+
+.course-type{
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  /* background: rgb(231,16,16);
+background: linear-gradient(145deg, rgba(231,16,16,1) 50%, rgba(255,255,255,0) 50%); */
+font-size: 10px;
+font-weight: bolder;
+}
+.course-type-not-avaliable{
+
+  /* background: rgb(231,16,16);
+background: linear-gradient(145deg, rgba(231,16,16,1) 50%, rgba(255,255,255,0) 50%); */
+
+color:rgb(201, 115, 115);
+
+}
+.course-date-container{
+  /* background-color: orange; */
+  margin: 0%;
+  padding: 0%;
+  /* box-sizing: border-box;
+  line-height: 0%; */
+}
+
+.course-button-container{
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+.course-button-container>button{
+  outline: none;
+  padding: 0.25em 1em 0.25em 1em;
+
+  border-radius: 10px;
+  opacity: 0.9;
+}
+.course-button-container>button{
+
+  opacity: 1;
+}
+.avaliable-button{
+  border: 1px solid rgb(5, 71, 5);
+  background-color:   rgb(167, 245, 167);
+}
+.not-avaliable-button{
+  border: 1px solid  rgb(240, 68, 68);
+  background-color: rgb(241, 186, 186);
+}
+
+@media screen and (max-width: 2500px){
+  .footer-container>.g-xl{
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: center;
+    grid-gap: 10px;
+
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .footer-container>.g-l{
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    grid-gap: 10px;
+  }
+}
+@media screen and (max-width: 1024px){
+  .footer-container>.g-m{
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 775px){
+  .footer-container>.g-s{
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-gap: 10px;
+  }
+}
+@media screen and (max-width: 480px){
+  .footer-container>.g-xs{
+    grid-template-columns: auto;
+    justify-content: center;
+    grid-row-gap: 10px;
+  }
+}
+

@@ -1,0 +1,43 @@
+.app-filter-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.filter-item{
+  display:flex ;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+/* .filter-item>div>input{
+  display: none;
+}
+.filter-item>div>label{
+  width: 150px;
+padding:0.5em 1em 0.5em 1em;
+border: 1px solid green;
+border-radius: 20px;
+background-color: gray;
+position: relative;
+}
+.filter-item>div>label::before{
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgb(5, 44, 5);
+  left: 0%;
+  top: 0%;
+  background-color: rgb(185, 253, 185);
+}
+.filter-item>div>input:checked>label{
+  width: 150px;
+  padding:0.5em 1em 0.5em 1em;
+  border: 1px solid green;
+  border-radius: 20px;
+  background-color: rgb(201, 22, 22);
+  position: relative;
+}
+ */
