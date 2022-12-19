@@ -11,6 +11,7 @@
     [avaliable]="getTotalAvaliableItem()"
     [notAvaliable]="getNotTotalAvaliableItem()"
     (onRaidioButtonChange)="onFilter($event)"
+    [count]="onCounter()"
   ></app-filter>
 
   <div class="footer-grid g-xs g-s g-m g-l g-xl">
@@ -65,3 +66,7 @@
     </div>
   </div>
 </div>
+<button (click)="onDecrement()">decrement</button>
+<span>{{ cal }}</span>
+
+<figure id="snake"></figure>

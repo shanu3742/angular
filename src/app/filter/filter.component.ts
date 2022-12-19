@@ -12,6 +12,7 @@ export class FilterComponent {
   @Input() free: number = 0
   @Input() avaliable: number = 0
   @Input() notAvaliable: number = 0
+  @Input() count: number = 0
 
   selectedBox: string = 'all'
 
@@ -27,5 +28,26 @@ export class FilterComponent {
 
     console.log(this.selectedBox)
   }
+
+
+  /**
+   *render first time
+   *and whenever input update
+   *
+   */
+
+
+  ngOnChanges(changes: any) {
+    console.log('run on input updated', changes)
+    console.log(typeof this.ngOnChanges)
+  }
+
+  /**
+   * render first  time
+   */
+  ngOnInit() {
+    console.log('run once')
+  }
+
 
 }
