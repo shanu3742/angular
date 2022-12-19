@@ -246,7 +246,7 @@ export class FooterComponent {
   private scaleX: any
   private scaleY: any
 
-
+  intervalTime = 10
 
   colorScale = d3.scaleOrdinal(this.data.map((el) => el.year)).range(d3.schemeCategory10)
 
@@ -355,17 +355,39 @@ export class FooterComponent {
     // console.log('converted color', this.stringToColour('shanu'))
 
 
-    this.g.append('g').selectAll('rect').data(this.data).enter().append('rect')
+
+    /**
+     * set rect intervalTime
+     */
+
+    let actualIntrvalTime = this.intervalTime * 1000 / this.data.length
+
+    let rectIndex = 0;
+
+
+    let rect = this.g.append('g').selectAll('rect').data(this.data).enter().append('rect')
       .attr('x', (d: Data, i: number) => this.scaleX(d.year))
       .attr('y', (d: Data, i: number) => d.value > 0 ? this.scaleY(d.value) : this.scaleY(0))
       .attr('height', (d: Data, i: number) => d.value > 0 ? this.scaleY(0) - this.scaleY(d.value) : this.scaleY(d.value) - this.scaleY(0))
-      .attr('fill', (d: Data, i: number) => this.hexToRgbA(`${d.year}${d.value}`, 0.5))
       .attr('stroke', (d: Data, i: number) => this.hexToRgbA(`${d.year}${d.value}`, 1))
-
-      .transition(d3.transition()
-        .duration(750)
-        .ease(d3.easeLinear))
       .attr('width', this.scaleX.bandwidth())
+      .attr('fill', (d: Data, i: number) => this.hexToRgbA(`${d.year}${d.value}`, 0.5))
+
+    // let x = setInterval(() => {
+    //   console.log(`hello interval`)
+    //   if (rectIndex < this.data.length) {
+    //     rect.attr('fill', (d: Data, i: number) => rectIndex === i ? 'red' : this.hexToRgbA(`${d.year}${d.value}`, 0.5))
+    //     rectIndex = rectIndex + 1
+    //   } else {
+    //     rect.remove()
+    //     this.createRect()
+    //     rectIndex = 0
+    //     clearInterval(x)
+    //   }
+    // }, actualIntrvalTime)
+
+    // console.log('index after update', rectIndex)
+
 
 
   }
@@ -373,6 +395,65 @@ export class FooterComponent {
 
   createLine() {
 
+    //generate linear gridient
+
+    //   <defs>
+    //   <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+    //     <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+    //     <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+    //   </linearGradient>
+    // </defs>
+
+
+    /**
+     * select random color
+     */
+
+    let randomIndex = Math.floor(Math.random() * this.data.length)
+    let gragdient = this.svg.append('defs').append('linearGradient').attr('id', 'grad1').attr('x1', '0%').attr('x2', '100%').attr('y1', '0%').attr('y2', '0%')
+    gragdient.append('stop').attr('offset', '0%').style('stop-color', `${this.hexToRgbA(`${this.data[randomIndex].year}${this.data[randomIndex].year}`, 1)}`).style('stop-opacity', '1')
+    gragdient.append('stop').attr('offset', '100%').style('stop-color', `${this.hexToRgbA(`${this.data[randomIndex + 1].year}${this.data[randomIndex + 1].year}`, 1)}`).style('stop-opacity', '1')
+    // Add the line
+    this.g.append("path").datum(this.data)
+      .attr("fill", "none")
+
+
+      .attr("stroke", "url(#grad1)")
+      .attr('id', 'curveLine')
+      .attr("stroke-width", 1.5)
+      .attr("d", d3.line().x((d: any) => {
+        console.log('d in x', d.year)
+
+        if (d.year === this.data[0].year) {
+          return this.scaleX(d.year)
+        } else {
+          return this.scaleX(d.year) + 26
+        }
+
+      })
+        .y((d: any) => {
+          console.log(d)
+          return this.scaleY(d.value)
+        })
+      )
+    // .curve(d3.curveBasis)
+
+    let path: any = document.getElementById('curveLine')
+
+    let pathString = path.attributes.d.value
+
+    console.log(pathString)
+    //   <circle r="5" fill="red">
+    //   <animateMotion
+    //     dur="10s"
+    //     repeatCount="indefinite"
+    //     path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+    // </circle>
+
+
+
+
+    this.g.append('circle').attr('r', 5).attr('fill', 'red').append('animateMotion').attr('dur', `${this.intervalTime}s`).attr('repeatCount', "indefinite").attr('path', pathString).on('onscroll', () => console.log('amimation circle'))
   }
 
   createSvg() {
